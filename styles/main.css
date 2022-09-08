@@ -1,0 +1,177 @@
+:root {
+    --primary-soft-red: hsl(10, 79%, 65%);
+    --primary-cyan: hsl(186, 34%, 60%);
+    --neutral-dark-brown: hsl(25, 47%, 15%);
+    --neutral-medium-brown: hsl(28, 10%, 53%);
+    --neutral-cream: hsl(27, 66%, 92%);
+    --neutral-very-pale-orange: hsl(33, 100%, 98%);
+    --font-size: 18px;
+}
+
+/*MOBILE VIEW*/
+body {
+    background-color: var(--neutral-cream);
+    margin: 60px 20px;
+}
+
+.block {
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.expense-tracker .block:first-child {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-soft-red);
+}
+
+.expense-tracker .block:nth-child(2) {
+    background-color: var(--neutral-very-pale-orange);
+    margin-top: 15px;
+}
+
+.block__my-balance {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.main-title {
+    font: .9rem/1.1 "DM Sans", sans-serif;
+    margin-top: 0;
+    color: white;
+}
+
+.current-balance {
+    font: bold 1.5rem/1.1 "DM Sans", sans-serif;
+    color: white;
+    display: block;
+}
+
+.block__logo {
+    display: grid;
+    place-items: center;
+}
+
+.secondary-title {
+    font: bold 1.25rem/1.1 "DM Sans", sans-serif;
+    margin-bottom: 60px;
+    margin-top: 0;
+}
+
+
+
+.bar-graph {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.column:nth-child(3) .bar {
+    background-color: var(--primary-cyan);
+}
+
+.bar {
+    height: 50px;
+    min-width: 26px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    background-color: var(--primary-soft-red);
+}
+
+.day {
+    font: .75rem/1.1 "DM Sans", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+.expenses {
+    display: flex;
+    justify-content: space-between;
+}
+
+.expenses__title {
+    font: .9rem/1.1 "DM Sans", sans-serif;
+    display: block;
+}
+
+.expenses__current-total {
+    font: bold 1.5rem/1.1 "DM Sans", sans-serif;
+    margin-top: 5px;
+    display: block;    
+}
+
+.expenses__percent-increase {
+    font: bold .9rem/1.1 "DM Sans", sans-serif;
+    text-align: right;
+    display: block;
+}
+
+.expenses div:nth-child(2) {
+    place-self: flex-end;
+}
+
+.attribution {
+    margin-top: 20px;
+}
+
+.attribution span {
+    display: block;
+    text-align: center;
+    font: .75rem/1.4 "DM Sans", sans-serif;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+/*TABLET VIEW*/
+@media screen and (min-width: 375px) {
+    body {
+        background-color: red;
+    }
+
+    .expense-tracker {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .column {
+        position: relative;
+    }
+
+    .column:hover {
+        cursor: pointer;
+    }
+    
+    .column:hover .bar {
+        filter: brightness(1.2);
+    }
+
+    .column:hover::after {
+        content: "$52.36";
+        background-color: black;
+        color: white;
+        width: min-content;
+        position: absolute;
+        bottom: calc(100% + 5px);
+        padding: 4px;
+        font: .75rem/1.1 "DM Sans", sans-serif;
+        translate: -25%;
+    }
+
+}
+
+/*DESKTOP VIEW*/
+@media screen and (min-width: 1440px) {
+    body {
+        background-color: violet;
+    }
+}
+
+
